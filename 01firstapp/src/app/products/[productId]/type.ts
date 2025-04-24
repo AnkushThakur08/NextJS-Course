@@ -3,5 +3,5 @@ export interface IProductDetails {
 }
 
 export interface ProductDetailsProps {
-    params: IProductDetails
+    params: Promise<IProductDetails>
   }

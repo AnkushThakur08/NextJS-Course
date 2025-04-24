@@ -1,10 +1,10 @@
 import { ProductDetailsProps } from "./type"
 
-const ProductDetails = ({params}: ProductDetailsProps) => {
-    const productID = params.productId
+const ProductDetails = async({params}: ProductDetailsProps) => {
+    const {productId} = await params
     return (
         <div>
-            <h1>This is Product Listing Page {productID}</h1>
+            <h1>This is Product Listing Page {productId}</h1>
         </div>
     )
 }
