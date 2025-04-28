@@ -50,3 +50,12 @@ It covers key Next.js concepts including routing, dynamic routes, params handlin
         └── [...slug]/
                 └── page.tsx
 ```
+
+- **Not Found**
+
+  - we can create a file named as `not-found.tsx` inside the app folder
+  - Name convensation should be same as it is
+  - we also have a `notFound` Function from next, we can use that function to call our page based on the code Logic eg:
+    `{parseInt(productId) > 1000 && notFound()}`
+  - we can have mutiple 404 as well, to achieve that, we create a file `not-found.tsx` in that particular directory
+  - we cannot access Props in Not Found to access the parameter we need to use `usePathName` hook
