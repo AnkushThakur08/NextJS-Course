@@ -59,3 +59,7 @@ It covers key Next.js concepts including routing, dynamic routes, params handlin
     `{parseInt(productId) > 1000 && notFound()}`
   - we can have mutiple 404 as well, to achieve that, we create a file `not-found.tsx` in that particular directory
   - we cannot access Props in Not Found to access the parameter we need to use `usePathName` hook
+
+- **Private Folder**
+  - User can create a Private folder by start the folder name with `_` underscore
+  - folder starting with `_` are not included in the Routing
