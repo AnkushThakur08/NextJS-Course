@@ -1,30 +1,43 @@
-# NextJS-Course
+# 📚 Next.js Course Notes
 
-## Routing
+## ✨ Introduction
+This repository contains notes, examples, and code snippets from the Next.js Course by Codevolution.
+It covers key Next.js concepts including routing, dynamic routes, params handling, layouts, fetching data, and more.
 
-- Folder name represent the route.
-    - we need to create the file inside the folder with the name of **page**
-- For ID's ```product/105455256 ```
-    - we will use sqaure bracket []
-    - **Folder Structure** - products > [productId] > page.tsx
-- For Nested ID's ```product/105455256/reviews/65656565 ```
-    - we will use sqaure bracket []
-    - **Folder Structure** - products > [productId] > reviews > [reviewId] > page.tsx
 
-## How to get the Params
-- NextJS allow user to get the Params from the props
-```javascript
-const ReviewId = async ({params}: IReviewProps) => {
-    const {productId, reviewId } = await params
-    return (
-        <div>
-            <h1>This is my Product Id: {productId}</h1>
-            <h1>This is my Review Id: {reviewId}</h1>
-        </div>
-    )
-}
+## Routing in Next.js
 
-export default ReviewId
+- **Folder Name = Route Name**
+    - Each folder inside the `app/` directory automatically creates a route.
+    - The file must be named `page.tsx` to render a page.
 
+- **Dynamic Routes**
+    - Use square brackets `[ ]` for dynamic segments (e.g., `/products/105455256)`.
+    - **Folder Structure** 
+```css
+        app/
+        └── products/
+             └── [productId]/
+                    └── page.tsx
 ```
 
+- **Nested Dynamic Routes**
+    - Example URL: `/products/105455256/reviews/65656565`
+    - **Folder Structure** 
+```css
+        app/
+        └── products/
+             └── [productId]/
+                    └── reviews/
+                        └── [reviewId]/
+                                └── page.tsx
+```
+- **Catch-All Routes**
+    - Use ```[...slug]``` to match multiple nested segments.
+        - **Folder Structure** 
+```css
+   app/
+    └── docs/
+        └── [...slug]/
+                └── page.tsx
+```
