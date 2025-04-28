@@ -61,5 +61,18 @@ It covers key Next.js concepts including routing, dynamic routes, params handlin
   - we cannot access Props in Not Found to access the parameter we need to use `usePathName` hook
 
 - **Private Folder**
+
   - User can create a Private folder by start the folder name with `_` underscore
   - folder starting with `_` are not included in the Routing
+
+- **Route Grouping**
+  - we can group the route using `( )` bracket
+  - This help in making good Project Structure
+
+```css
+   app/
+    └── (auth)/
+            └── Login
+            └── Register
+            └── Forget
+```
