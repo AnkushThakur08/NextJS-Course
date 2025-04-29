@@ -57,8 +57,15 @@ It covers key Next.js concepts including routing, dynamic routes, params handlin
   - Name convensation should be same as it is
   - we also have a `notFound` Function from next, we can use that function to call our page based on the code Logic eg:
     `{parseInt(productId) > 1000 && notFound()}`
-  - we can have mutiple 404 as well, to achieve that, we create a file `not-found.tsx` in that particular directory
+  - we can have mutiple **not found pages** as well, to achieve that, we create a file `not-found.tsx` in that particular directory
   - we cannot access Props in Not Found to access the parameter we need to use `usePathName` hook
+
+    - **Folder Structure**
+
+```css
+   app/
+    └── not-found.tsx
+```
 
 - **Private Folder**
 
@@ -83,7 +90,7 @@ It covers key Next.js concepts including routing, dynamic routes, params handlin
   - NextJS provides a file `layout.tsx` file at the root level, which is known as Root layout
   - `layout.tsx` takes `{children}` as a props
   - Header and Footer will be shared by all the Pages, so we have added them in the layout
-  - We will add all those stuff here, which need to be shared by all the pages
+  - Things which will be shared by the entire app will be added here eg we have added `<Header />` `<Footer />`
 
 ```javascript
 <Header />;
@@ -96,7 +103,7 @@ It covers key Next.js concepts including routing, dynamic routes, params handlin
 - **Nested Layout**
 
   - we can create different layout for different Pages
-  - To create that we need to create a `Layout.tsx` in the folder and accept children as a prop
+  - To create that we need to create a `Layout.tsx` in that particular folder
 
 - **Mutiple Root Layout**
 
@@ -116,25 +123,30 @@ It covers key Next.js concepts including routing, dynamic routes, params handlin
         ├── login/
         ├── register/
     ```
-### MetaData 
+
+### MetaData
+
 - Used for SEO Purpose
   - **Layout**
     - It is applicable to all the pages
   - **Particular Page**
     - It is applicable to that particular page
+
 ```javascript
-    export const metadata: Metadata = {
-    title: "About Us",
-    description: "This is the description of about us Page",
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "This is the description of about us Page",
 };
- ```
+```
+
 - **Dynamic MetaData**
 
 - **Title with Object**
 
-
 ### Link
-  - It is used for Navigation
-  - `href` - The path or URL to navigate to
-  - `<Link className="text-blue-300" href="/products"> Products</Link>`
-  -  **replace** - will replace the current history state instead of adding a new URL into the browser's history stack.
+
+- It is used for Navigation
+- `href` - The path or URL to navigate to
+- `<Link className="text-blue-300" href="/products"> Products</Link>`
+- **replace** - will replace the current history state instead of adding a new URL into the browser's history stack.
+- We can also add the logic for **Active** Tab
