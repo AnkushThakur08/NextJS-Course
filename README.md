@@ -116,3 +116,25 @@ It covers key Next.js concepts including routing, dynamic routes, params handlin
         ├── login/
         ├── register/
     ```
+### MetaData 
+- Used for SEO Purpose
+  - **Layout**
+    - It is applicable to all the pages
+  - **Particular Page**
+    - It is applicable to that particular page
+```javascript
+    export const metadata: Metadata = {
+    title: "About Us",
+    description: "This is the description of about us Page",
+};
+ ```
+- **Dynamic MetaData**
+
+- **Title with Object**
+
+
+### Link
+  - It is used for Navigation
+  - `href` - The path or URL to navigate to
+  - `<Link className="text-blue-300" href="/products"> Products</Link>`
+  -  **replace** - will replace the current history state instead of adding a new URL into the browser's history stack.
