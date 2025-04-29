@@ -79,12 +79,11 @@ It covers key Next.js concepts including routing, dynamic routes, params handlin
 
 ### Layout
 
-- NextJS provides a `layout.tsx` file at the root level, which is usefull for setting the layout
-- `layout.tsx` file take `{children}` as a props
-- we put shared components in the Layout eg:
-- Header and Footer will be shared by all the Pages
-- **Imp** - we can have a seperate layout as well for seperate Pages i.e `Nested Layout`
-- Need to create a `Layout.tsx` in the folder
+- **Root Layout**
+  - NextJS provides a file `layout.tsx` file at the root level, which is known as Root layout
+  - `layout.tsx` takes `{children}` as a props
+  - Header and Footer will be shared by all the Pages, so we have added them in the layout
+  - We will add all those stuff here, which need to be shared by all the pages
 
 ```javascript
 <Header />;
@@ -93,3 +92,27 @@ It covers key Next.js concepts including routing, dynamic routes, params handlin
 }
 <Footer />;
 ```
+
+- **Nested Layout**
+
+  - we can create different layout for different Pages
+  - To create that we need to create a `Layout.tsx` in the folder and accept children as a prop
+
+- **Mutiple Root Layout**
+
+  - You can separate layouts for certain route groups using folder grouping:
+  - Example: Don't want `Header/Footer` in login/signup pages.
+  - Structure:
+
+    ```plaintext
+    app/
+    └── (with-layout)/
+        ├── layout.tsx  ← includes Header & Footer
+        └── dashboard/
+        └── about/
+        └── contact/
+
+    └── (auth)/
+        ├── login/
+        ├── register/
+    ```
