@@ -76,3 +76,20 @@ It covers key Next.js concepts including routing, dynamic routes, params handlin
             └── Register
             └── Forget
 ```
+
+### Layout
+
+- NextJS provides a `layout.tsx` file at the root level, which is usefull for setting the layout
+- `layout.tsx` file take `{children}` as a props
+- we put shared components in the Layout eg:
+- Header and Footer will be shared by all the Pages
+- **Imp** - we can have a seperate layout as well for seperate Pages i.e `Nested Layout`
+- Need to create a `Layout.tsx` in the folder
+
+```javascript
+<Header />;
+{
+  Children;
+}
+<Footer />;
+```

@@ -1,7 +1,11 @@
 export interface IProductDetails {
-    productId: string;
+  productId: string;
 }
 
 export interface ProductDetailsProps {
-    params: Promise<IProductDetails>
-  }
+  params: Promise<IProductDetails>;
+}
+
+export interface IChildrenProps {
+  children: React.ReactNode;
+}
