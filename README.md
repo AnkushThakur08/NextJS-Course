@@ -181,3 +181,7 @@ router.replace()
 - Template File re-renders
 - layouts are not re-renders
 - so in Jb humne pass grouping hoti hai `()` like in auth, we have a layout, so code code written in layout will not re-render
+
+
+### Loading
+  - We can add a loading file `loading.tsx` to handle all types of delays
