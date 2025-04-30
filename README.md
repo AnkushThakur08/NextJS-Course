@@ -84,7 +84,7 @@ It covers key Next.js concepts including routing, dynamic routes, params handlin
             └── Forget
 ```
 
-### Layout
+## Layout in NextJS
 
 - **Root Layout**
   - NextJS provides a file `layout.tsx` file at the root level, which is known as Root layout
@@ -150,3 +150,13 @@ export const metadata: Metadata = {
 - `<Link className="text-blue-300" href="/products"> Products</Link>`
 - **replace** - will replace the current history state instead of adding a new URL into the browser's history stack.
 - We can also add the logic for **Active** Tab
+
+###  Params & Search Params
+  - We can get the value of Params and Search Params, using the props in the server side component
+  - on the Client side component we need to use hook, that is `use()` hook
+  ```javascript
+  const { articleId } = use(params);
+  const { lang } =  use(searchParams);
+  ```
+
+
