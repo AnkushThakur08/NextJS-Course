@@ -9,8 +9,6 @@ const BlogDetails = async ({ params }: any) => {
   };
 
   const data = await getJokes();
-  console.log("data", data);
-
   return (
     <div>
       <h2>Blog Details: {slug}</h2>

@@ -6,9 +6,6 @@ import { usePathname } from "next/navigation";
 
 const AuthLayout = ({ children }: IChildren) => {
   const pathname = usePathname();
-
-  console.log(pathname);
-
   const navLinks: INavLinks[] = [
     { title: "Login", href: "/login" },
     { title: "Register", href: "/register" },
@@ -34,6 +31,25 @@ const AuthLayout = ({ children }: IChildren) => {
         );
       })}
       {children}
+
+      <Link
+        className="font-medium text-blue-600 dark:text-blue-500 hover:underline pr-3"
+        href="/article/article-123?lang=en"
+      >
+        Article in English
+      </Link>
+      <Link
+        className="font-medium text-blue-600 dark:text-blue-500 hover:underline pr-3"
+        href="/article/article-456?lang=fr"
+      >
+        Article in Franch
+      </Link>
+      <Link
+        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+        href="/article/article-789?lang=sp"
+      >
+        Article in Spanish
+      </Link>
     </div>
   );
 };
