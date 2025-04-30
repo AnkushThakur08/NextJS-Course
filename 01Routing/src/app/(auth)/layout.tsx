@@ -13,6 +13,7 @@ const AuthLayout = ({ children }: IChildren) => {
   ];
   return (
     <div>
+      <input type="text" placeholder="enter Name" />
       <h1>Auth Layout</h1>
       {navLinks.map((link, index) => {
         const isActive = pathname === link.href;

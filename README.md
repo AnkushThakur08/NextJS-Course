@@ -151,12 +151,33 @@ export const metadata: Metadata = {
 - **replace** - will replace the current history state instead of adding a new URL into the browser's history stack.
 - We can also add the logic for **Active** Tab
 
-###  Params & Search Params
-  - We can get the value of Params and Search Params, using the props in the server side component
-  - on the Client side component we need to use hook, that is `use()` hook
-  ```javascript
-  const { articleId } = use(params);
-  const { lang } =  use(searchParams);
-  ```
+### Params & Search Params
 
+- We can get the value of Params and Search Params, using the props in the server side component
+- on the Client side component we need to use hook, that is `use()` hook
+- **Imp** `layout.tsx` has only access to `searchParams`, while `page.tsx` has access to Params and Search Params
 
+```javascript
+const { articleId } = use(params);
+const { lang } = use(searchParams);
+```
+
+### Router
+
+- It is used for navigation
+- We have have `redirect`, instead of showing not found page, we can redirect the user to products page with the help of redirect
+
+```javascript
+const router = useRouter()
+
+router.push(/)
+router.forward()
+router.replace()
+
+```
+
+### Template
+
+- Template File re-renders
+- layouts are not re-renders
+- so in Jb humne pass grouping hoti hai `()` like in auth, we have a layout, so code code written in layout will not re-render
